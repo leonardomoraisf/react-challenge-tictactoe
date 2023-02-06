@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+html,
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-game {
+
+    span{
+
+        &::after {
+            content: '';
+            display: none;
+            width: 170%;
+            height: 10px;
+            background: black;
+            position: absolute;
+            z-index: 100;
+        }
+
+        &.horizontal{
+            &::after{
+                display: block;
+            }
+        }
+        &.vertical{
+            &::after{
+                display: block;
+                rotate: 90deg;
+            }
+        }
+        &.diagonal-1{
+            &::after{
+                display: block;
+                rotate: 45deg;
+            }
+        }
+        &.diagonal-2{
+            &::after{
+                display: block;
+                rotate: 135deg;
+            }
+        }
+
+    }
+
+}
